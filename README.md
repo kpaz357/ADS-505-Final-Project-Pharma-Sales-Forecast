@@ -1,7 +1,9 @@
 # ADS-505 Final Project: Predictive Modeling for Pharmaceutical Sales Performance
 
 ## 📖 Project Purpose
-This project uses **historical pharmaceutical sales data** to build predictive models that forecast future demand. Accurate forecasting can help optimize inventory, reduce waste, and guide production strategies. By analyzing multi-year sales patterns, we aim to show how data science can provide **real-world value** in the pharmaceutical industry.
+This project leverages historical pharmaceutical sales data to develop predictive models that forecast future demand.
+Accurate forecasting supports inventory optimization, waste reduction, and production scheduling in a highly seasonal market.
+By analyzing six years of sales data across multiple therapeutic categories, this project demonstrates how data science can create measurable value in the pharmaceutical supply chain.
 
 ---
 
@@ -15,10 +17,23 @@ This project uses **historical pharmaceutical sales data** to build predictive m
 ---
 
 ## 🎯 Objectives
-- Explore multi-year sales data across therapeutic categories  
-- Identify key drivers of demand and seasonality  
-- Compare modeling approaches: **SARIMA**, **XGBoost**, **Random Forest**, **Linear Regression** (and optional **LSTM**)  
-- Translate results into **business recommendations** for demand planning and inventory optimization
+- Conduct exploratory analysis to uncover seasonality and category-level trends
+- Identify key demand drivers influencing pharmaceutical sales
+- Compare multiple forecasting methods:
+  - SARIMA (Time-Series Baseline)
+  - Random Forest
+  - XGBoost
+  - Logistic Regression (Surge Detection)
+- Translate results into business recommendations for proactive production and inventory management
+
+---
+
+| Model               | Purpose                                                    | Key Strength                                               |
+| ------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| SARIMA              | Baseline time-series model capturing trend and seasonality | Interpretable and grounded in classical forecasting theory |
+| Random Forest       | Ensemble regression capturing nonlinear interactions       | Strong baseline for predictive accuracy                    |
+| XGBoost             | Gradient boosting for improved accuracy and regularization | Highest performing model overall                           |
+| Logistic Regression | Binary classifier for surge detection                      | Adds operational early-warning capability                  |
 
 ---
 
@@ -29,16 +44,48 @@ This project uses **historical pharmaceutical sales data** to build predictive m
 ---
 
 ## 👥 Team Contributions
-- **Saloni Barhate** → Data preprocessing/cleaning, EDA, **XGBoost**, paper & presentation  
+- **Saloni Barhate** → Data preprocessing/cleaning, EDA, **Linear Regression**, paper & presentation  
 - **Kamran Shirazi** → Feature engineering, **Random Forest**, forecasting, paper & presentation  
-- **Kiara Paz** → Visualization & dashboards, **Linear Regression**, paper & presentation
+- **Kiara Paz** → Data preprocessing/cleaning, EDA, **XGBoost**, Time Series Analysis, paper & presentation
 
 ---
 
 ## 🗂️ Repo Structure
-data/ # raw, interim, processed (ignored)
-notebooks/ # exploratory notebooks
-src/ # scripts and models
-reports/ # figures, tables, write-ups
-README.md # project overview
+ADS-505-Final-Project-Pharma-Sales-Forecast/
+│
+├── data/                                
+│   ├── raw/                             
+│   ├── processed/                       
+│   └── train_test/                      
+│
+├── notebooks/                           
+│   ├── Preprocessing-EDA.ipynb          
+│   ├── Feature-Engineering+Data-Split.ipynb
+│   ├── Modeling-RandomForest+XGBoost.ipynb
+│   ├── Time-Series-Analysis.ipynb       
+│   └── Logistic-Regression-Surge.ipynb  
+│
+├── reports/                             
+│   ├── figures/                         
+│   ├── Technical-Report.pdf             
+│   └── Executive-Summary-Presentation.pptx                        
+│
+├── .gitignore                           
+├── requirements.txt                     
+├── README.md                            
+                            
 
+
+---
+## Results Summary 
+| Model               | MAE     | RMSE    | R²                              | Key Insight                                                 |
+| ------------------- | ------- | ------- | ------------------------------- | ----------------------------------------------------------- |
+| SARIMA              | 1050.59 | 3428.39 | —                               | Established baseline; captures broad seasonal cycles        |
+| Random Forest       | 3.70    | 5.77    | 0.939                           | Captured nonlinear relationships and short-term seasonality |
+| XGBoost             | 2.14    | 4.02    | 0.971                           | Most accurate; effectively modeled temporal dependencies    |
+| Logistic Regression | —       | —       | ROC-AUC = 0.888, PR-AUC = 0.392 | Detected 75% of surge weeks, enabling early demand alerts   |
+
+---
+
+## Github Repo
+https://github.com/kpaz357/ADS-505-Final-Project-Pharma-Sales-Forecast 
