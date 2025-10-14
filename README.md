@@ -63,12 +63,7 @@ ADS-505-Final-Project-Pharma-Sales-Forecast/
 │   ├── Feature-Engineering+Data-Split.ipynb
 │   ├── Modeling-RandomForest+XGBoost.ipynb
 │   ├── Time-Series-Analysis.ipynb       
-│   └── Logistic-Regression-Surge.ipynb  
-│
-├── reports/                             
-│   ├── figures/                         
-│   ├── Technical-Report.pdf             
-│   └── Executive-Summary-Presentation.pptx                        
+│   └── Logistic-Regression-Surge.ipynb                        
 │
 ├── .gitignore                           
 ├── requirements.txt                     
